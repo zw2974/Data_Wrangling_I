@@ -1,0 +1,24 @@
+---
+title: "data_import"
+output: github_document
+date: '2023-09-29'
+---
+
+```{r}
+library(tidyverse)
+litters_data = read_csv("data/FAS_litters.csv") |>
+  janitor::clean_names()
+```
+To convert them to lower snake case, use `janitor::clean_names()`
+
+Using `view`, `str`, `head`, `tail` to look at data
+
+`str`: Compactly display the internal structure of an R object
+
+```{r}
+tail(litters_data, 1)
+view(litters_data)
+str(litters_data)
+```
+
+Another tool that I use sometimes is skimr::skim, although for me it’s more “neat” than useful.
